@@ -351,7 +351,7 @@ else if(data.status === "SETUP"){
 
 if(data.status !== lastAlarmStatus){
 
-    if(data.status === "LOW"){
+    if(data.status === "LOW!!"){
 
         showNotification(
             "⚠ Infus Hampir Habis"
