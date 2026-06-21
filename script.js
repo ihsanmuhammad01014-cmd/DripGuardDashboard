@@ -146,6 +146,7 @@ let lastData = null;
 let statusPasien = {};
 let alarmShown = {
     LOW: false,
+    LOW: false,
     EMPTY: false,
     BLOCK: false
 };
@@ -438,10 +439,9 @@ if(data.status === "BLOCK" && !alarmShown.BLOCK){
 if(data.status === "NORMAL"){
 
     alarmShown.LOW = false;
+    alarmShown.LOW!! = false;
     alarmShown.EMPTY = false;
     alarmShown.BLOCK = false;
-    alarmShown.LOW!! = false;
-
 }
     
     // Grafik
