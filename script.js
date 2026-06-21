@@ -741,7 +741,8 @@ window.onload = function(){
     setTimeout(() => {
 
         showNotification(
-            "TEST NOTIFIKASI DRIPGUARD"
+            "TEST NOTIFIKASI DRIPGUARD",
+            "assets/alarm.mp3"
         );
 
     }, 2000);
