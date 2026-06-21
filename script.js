@@ -221,7 +221,7 @@ else if(data.status === "LOW!!"){
 
 else if(data.status === "EMPTY"){
     banner.style.display = "block";
-    banner.innerHTML = "⚠ INFUS HABIS BRO";
+    banner.innerHTML = "⚠ INFUS HABIS";
 }
 
 else if(data.status === "BLOCK"){
@@ -370,7 +370,7 @@ if(data.status !== lastAlarmStatus){
     else if(data.status === "EMPTY"){
 
         showNotification(
-            "⚠ Infus Habis BRO"
+            "⚠ Infus Habis "
         );
 
     }
