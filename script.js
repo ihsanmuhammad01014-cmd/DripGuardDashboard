@@ -359,7 +359,7 @@ if(data.status !== lastAlarmStatus){
 
     }
     
-    else if(data.status === "LOW"){
+    else if(data.status === "LOW!!"){
 
         showNotification(
             "⚠ Infus Sangat Rendah"
