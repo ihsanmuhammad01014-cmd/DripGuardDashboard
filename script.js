@@ -374,7 +374,7 @@ else if(data.status === "SETUP"){
 
 if(data.status !== lastAlarmStatus){
 
-if(data.status === "LOW" && !alarmShown.LOW){
+    if(data.status === "LOW" && !alarmShown.LOW){
 
     alarmShown.LOW = true;
 
@@ -389,9 +389,8 @@ if(data.status === "LOW" && !alarmShown.LOW){
 
 }
 
-    }
     
-    else if(data.status === "LOW!!"){
+else if(data.status === "LOW!!"){
 
         showNotification(
             "⚠ Infus Sangat Rendah"
@@ -404,7 +403,7 @@ if(data.status === "EMPTY" && !alarmShown.EMPTY){
     alarmShown.EMPTY = true;
 
     showNotification(
-        "🚨 Infus Habis"
+        "⚠ Infus Habis"
     );
 
     showBrowserNotification(
@@ -414,12 +413,13 @@ if(data.status === "EMPTY" && !alarmShown.EMPTY){
 
 }
 
+
 if(data.status === "BLOCK" && !alarmShown.BLOCK){
 
     alarmShown.BLOCK = true;
 
     showNotification(
-        "🚨 Infus Macet"
+        "⚠ Infus Macet"
     );
 
     showBrowserNotification(
