@@ -362,7 +362,7 @@ if(data.status !== lastAlarmStatus){
     else if(data.status === "EMPTY"){
 
         showNotification(
-            "🚨 Infus Habis"
+            "⚠ Infus Habis"
         );
 
     }
@@ -370,7 +370,7 @@ if(data.status !== lastAlarmStatus){
     else if(data.status === "BLOCK"){
 
         showNotification(
-            "🚨 Infus Macet"
+            "⚠ Infus Macet"
         );
 
     }
