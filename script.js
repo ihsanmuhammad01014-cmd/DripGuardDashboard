@@ -374,7 +374,7 @@ else if(data.status === "SETUP"){
 
 
 
-    if(data.status === "LOW" && !alarmShown.LOW){
+if(data.status === "LOW" && !alarmShown.LOW){
 
     alarmShown.LOW = true;
 
