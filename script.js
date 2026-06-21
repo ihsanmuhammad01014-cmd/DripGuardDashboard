@@ -146,7 +146,7 @@ let lastData = null;
 let statusPasien = {};
 let alarmShown = {
     LOW: false,
-    LOW: false,
+    LOW2: false,
     EMPTY: false,
     BLOCK: false
 };
@@ -391,9 +391,9 @@ if(data.status === "LOW" && !alarmShown.LOW){
 }
 
     
-if(data.status === "LOW!!" && !alarmShown.LOW!!){
+if(data.status === "LOW!!" && !alarmShown.LOW2){
 
-    alarmShown.LOW!! = true;
+    alarmShown.LOW2 = true;
 
     showNotification(
         "⚠ Infus Hampir Habis"
@@ -439,7 +439,7 @@ if(data.status === "BLOCK" && !alarmShown.BLOCK){
 if(data.status === "NORMAL"){
 
     alarmShown.LOW = false;
-    alarmShown.LOW!! = false;
+    alarmShown.LOW2 = false;
     alarmShown.EMPTY = false;
     alarmShown.BLOCK = false;
 }
