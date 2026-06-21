@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DripGuard Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body onclick="unlockSound()"></body>
+
+<body>
+
+    <!-- =========================
+         JUDUL
+    ========================== -->
+<button class="logout-btn" onclick="logout()">
+    Logout
+</button>
+
+<div class="header">
+
+    <div class="title-area">
+
+        <h1>DRIPGUARD DASHBOARD</h1>
+        <div id="welcomeUser" class="welcome-user">
+    Selamat Datang
+</div>
+
+        <p class="subtitle">
+            Sistem Monitoring & Kendali Infus Pasien
+        </p>
+
+    </div>
+
+</div>
+
+    
+    <div class="summary-container">
+
+<!--    <div class="summary-card online">
+        <span>🟢 ONLINE</span>
+        <h2 id="onlineCount">0</h2>
+    </div>
+
+    <div class="summary-card offline">
+        <span>🔴 OFFLINE</span>
+        <h2 id="offlineCount">0</h2>
+    </div>
+
+    
+    <div class="summary-card alarm">
+        <span>🚨 ALARM</span>
+        <h2 id="alarmCount">0</h2>
+    </div>
+-->
+
+</div>
+
+    <div class="patient-selector">
+
+    <button id="btn_pasien_01" onclick="gantiPasien('pasien_01')">
+        PASIEN 1
+    </button>
+
+    <button id="btn_pasien_02" onclick="gantiPasien('pasien_02')">
+        PASIEN 2
+    </button>
+
+    <button id="btn_pasien_03" onclick="gantiPasien('pasien_03')">
+        PASIEN 3
+    </button>
+
+</div>
+
+    <!-- =========================
+         ALARM BANNER
+    ========================== -->
+
+    <div id="alarmBanner" class="alarm-banner">
+        ⚠ INFUS HAMPIR HABIS
+    </div>
+
+    <!-- =========================
+         CARD PASIEN
+    ========================== -->
+
+    <div class="container">
+
+        <div class="card">
+
+            <h2 id="judulPasien">Pasien 01</h2>
+
+
+            <!-- STATUS DEVICE -->
+
+            <div id="deviceStatus" class="device-online">
+                🟢 PERANGKAT ONLINE
+            </div>
+
+            <!-- DATA PASIEN -->
+
+            <div class="data-row">
+                <span>Berat Cairan</span>
+                <span id="berat">Loading...</span>
+            </div>
+
+            <div class="data-row">
+                 <span>Sisa Infus</span>
+                 <span id="persen">0%</span>
+            </div>
+
+            <div class="data-row">
+                <span>TPM Aktual</span>
+                <span id="tpm">0</span>
+            </div>
+
+            <div class="data-row">
+                <span>Status</span>
+                <span id="status">Loading...</span>
+            </div>
+
+            <div class="data-row">
+                <span>Servo</span>
+                <span id="servo">Loading...</span>
+            </div>
+
+            <hr>
+
+            <!-- SETPOINT -->
+
+            <div class="setpoint-title">
+                Setpoint TPM
+            </div>
+
+            <div class="setpoint-display">
+                <span id="setpoint">0</span>
+            </div>
+
+            <div class="tpm-control">
+                <button onclick="setTPM(-1)">−</button>
+                <button onclick="setTPM(1)">+</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         GRAFIK TPM
+    ========================== -->
+
+    <div class="chart-card">
+
+        <h3>Grafik TPM Realtime</h3>
+
+        <canvas id="tpmChart"></canvas>
+
+    </div>
+
+    <!-- =========================
+         SCRIPT
+    ========================== -->
+    <script>
+
+if(
+    sessionStorage.getItem("login")
+    !== "true"
+){
+
+    window.location.href =
+    "index.html";
+
+}
+
+</script>
+
+<footer>
+
+    <p>
+        Developed by Ihsan Muhammad
+    </p>
+
+    <p>
+        Teknik Elektro - Universitas Ibn Khaldun Bogor
+    </p>
+
+    <p>
+        DripGuard Monitoring & Control System © 2026
+    </p>
+
+</footer>
+
+    <script type="module" src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>
+
