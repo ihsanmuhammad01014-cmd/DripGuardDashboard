@@ -125,6 +125,7 @@ let currentRef = null;
 let pasienAktif = "pasien_01";
 let lastData = null;
 let statusPasien = {};
+let lastAlarmStatus = "";
 
 
 // ============================
@@ -342,6 +343,40 @@ else if(data.status === "BLOCK"){
 
 else if(data.status === "SETUP"){
     statusEl.classList.add("status-setup");
+}
+
+// ============================
+// POPUP ALARM
+// ============================
+
+if(data.status !== lastAlarmStatus){
+
+    if(data.status === "LOW"){
+
+        showNotification(
+            "⚠ Infus Hampir Habis"
+        );
+
+    }
+
+    else if(data.status === "EMPTY"){
+
+        showNotification(
+            "🚨 Infus Habis"
+        );
+
+    }
+
+    else if(data.status === "BLOCK"){
+
+        showNotification(
+            "🚨 Infus Macet"
+        );
+
+    }
+
+    lastAlarmStatus = data.status;
+
 }
     
     // Grafik
