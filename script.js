@@ -221,12 +221,12 @@ else if(data.status === "LOW!!"){
 
 else if(data.status === "EMPTY"){
     banner.style.display = "block";
-    banner.innerHTML = "🚨 INFUS HABIS";
+    banner.innerHTML = "⚠ INFUS HABIS";
 }
 
 else if(data.status === "BLOCK"){
     banner.style.display = "block";
-    banner.innerHTML = "🚨 INFUS MACET";
+    banner.innerHTML = "⚠ INFUS MACET";
 }
 
 else{
@@ -351,10 +351,18 @@ else if(data.status === "SETUP"){
 
 if(data.status !== lastAlarmStatus){
 
-    if(data.status === "LOW"){
+    if(data.status === "LOW!!"){
 
         showNotification(
             "⚠ Infus Hampir Habis"
+        );
+
+    }
+    
+    else if(data.status === "LOW"){
+
+        showNotification(
+            "⚠ Infus Rendah"
         );
 
     }
