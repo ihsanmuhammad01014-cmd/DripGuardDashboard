@@ -221,7 +221,7 @@ else if(data.status === "LOW!!"){
 
 else if(data.status === "EMPTY"){
     banner.style.display = "block";
-    banner.innerHTML = "⚠ INFUS HABIS";
+    banner.innerHTML = "⚠ INFUS HABIS BRO";
 }
 
 else if(data.status === "BLOCK"){
