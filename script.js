@@ -19,10 +19,7 @@ if(!sessionStorage.getItem("login")){
 
 }
 
-
-function showNotification(pesan){
-
-    function showBrowserNotification(judul, pesan){
+function showBrowserNotification(judul, pesan){
 
     if(Notification.permission === "granted"){
 
@@ -34,6 +31,9 @@ function showNotification(pesan){
     }
 
 }
+
+function showNotification(pesan){
+
 
     alarmAudio.pause();
     alarmAudio.currentTime = 0;
@@ -372,7 +372,7 @@ else if(data.status === "SETUP"){
 // POPUP ALARM
 // ============================
 
-if(data.status !== lastAlarmStatus){
+
 
     if(data.status === "LOW" && !alarmShown.LOW){
 
@@ -434,10 +434,6 @@ if(data.status === "NORMAL"){
     alarmShown.LOW = false;
     alarmShown.EMPTY = false;
     alarmShown.BLOCK = false;
-
-}
-
-    lastAlarmStatus = data.status;
 
 }
     
