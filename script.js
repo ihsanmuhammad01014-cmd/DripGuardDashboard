@@ -1,6 +1,18 @@
 let alarmAudio = new Audio("assets/alarm.mp3");
 alarmAudio.loop = true;
 
+if(!sessionStorage.getItem("login")){
+
+    sessionStorage.setItem(
+        "redirectAfterLogin",
+        window.location.href
+    );
+
+    window.location.href =
+        "index.html";
+
+}
+
 
 function showNotification(pesan){
 
@@ -620,6 +632,7 @@ window.logout = function(){
 
 }
 
+/*
 window.onload = function(){
 
     setTimeout(() => {
@@ -631,6 +644,7 @@ window.onload = function(){
     }, 2000);
 
 };
+*/
 
 let audioUnlocked = false;
 
