@@ -379,24 +379,30 @@ if(data.status === "LOW" && !alarmShown.LOW){
     alarmShown.LOW = true;
 
     showNotification(
-        "⚠ Infus Hampir Habis"
+        "⚠ Infus Rendah"
     );
 
     showBrowserNotification(
         "DripGuard Alert",
-        "Infus pasien hampir habis"
+        "Infus Pasien Rendah"
     );
 
 }
 
     
-else if(data.status === "LOW!!"){
+if(data.status === "LOW!!" && !alarmShown.LOW!!){
 
-        showNotification(
-            "⚠ Infus Sangat Rendah"
-        );
+    alarmShown.LOW!! = true;
 
-    }
+    showNotification(
+        "⚠ Infus Hampir Habis"
+    );
+    showBrowserNotification(
+        "DripGuard Alert",
+        "Infus Pasien Hampir Habis"
+    );
+
+}
 
 if(data.status === "EMPTY" && !alarmShown.EMPTY){
 
@@ -408,7 +414,7 @@ if(data.status === "EMPTY" && !alarmShown.EMPTY){
 
     showBrowserNotification(
         "DripGuard Alert",
-        "Infus pasien habis"
+        "Infus Pasien Habis"
     );
 
 }
@@ -424,7 +430,7 @@ if(data.status === "BLOCK" && !alarmShown.BLOCK){
 
     showBrowserNotification(
         "DripGuard Alert",
-        "Aliran infus terhambat"
+        "Aliran Infus Terhambat"
     );
 
 }
@@ -434,6 +440,7 @@ if(data.status === "NORMAL"){
     alarmShown.LOW = false;
     alarmShown.EMPTY = false;
     alarmShown.BLOCK = false;
+    alarmShown.LOW!! = false;
 
 }
     
