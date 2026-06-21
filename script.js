@@ -1,6 +1,12 @@
 let alarmAudio = new Audio("assets/alarm.mp3");
 alarmAudio.loop = true;
 
+if ("Notification" in window) {
+
+    Notification.requestPermission();
+
+}
+
 if(!sessionStorage.getItem("login")){
 
     sessionStorage.setItem(
@@ -15,6 +21,19 @@ if(!sessionStorage.getItem("login")){
 
 
 function showNotification(pesan){
+
+    function showBrowserNotification(judul, pesan){
+
+    if(Notification.permission === "granted"){
+
+        new Notification(judul,{
+            body: pesan,
+            icon: "assets/logo-clean.png"
+        });
+
+    }
+
+}
 
     alarmAudio.pause();
     alarmAudio.currentTime = 0;
@@ -354,8 +373,13 @@ if(data.status !== lastAlarmStatus){
     if(data.status === "LOW"){
 
         showNotification(
-            "⚠ Infus Rendah"
+            "⚠ Infus Hampir Habis"
         );
+
+        showBrowserNotification(
+        "DripGuard Alert",
+        "Infus pasien hampir habis"
+    );
 
     }
     
@@ -367,21 +391,31 @@ if(data.status !== lastAlarmStatus){
 
     }
 
-    else if(data.status === "EMPTY"){
+else if(data.status === "EMPTY"){
 
-        showNotification(
-            "⚠ Infus Habis "
-        );
+    showNotification(
+        "⚠ Infus Habis"
+    );
 
-    }
+    showBrowserNotification(
+        "DripGuard Alert",
+        "Infus pasien habis"
+    );
 
-    else if(data.status === "BLOCK"){
+}
 
-        showNotification(
-            "⚠ Infus Macet"
-        );
+else if(data.status === "BLOCK"){
 
-    }
+    showNotification(
+        "⚠ Infus Macet"
+    );
+
+    showBrowserNotification(
+        "DripGuard Alert",
+        "Aliran infus terhambat"
+    );
+
+}
 
     lastAlarmStatus = data.status;
 
