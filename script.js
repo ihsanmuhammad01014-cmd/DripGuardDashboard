@@ -1,4 +1,4 @@
-let alarmAudio = new Audio("assets/alarm.mp3");
+let alarmAudio = new Audio();
 alarmAudio.loop = true;
 
 if ("Notification" in window) {
@@ -32,22 +32,23 @@ function showBrowserNotification(judul, pesan){
 
 }
 
-function showNotification(pesan){
-
+function showNotification(pesan, suara){
 
     alarmAudio.pause();
     alarmAudio.currentTime = 0;
 
+    alarmAudio.src = suara;
+    alarmAudio.loop = true;
+
     alarmAudio.play();
 
     Swal.fire({
-        icon: 'warning',
-        title: 'Peringatan',
-        text: pesan,
-        allowOutsideClick: false,
-        allowEscapeKey: false,
-        confirmButtonText: 'OK'
-    }).then(() => {
+        icon:'warning',
+        title:'Peringatan',
+        text:pesan,
+        allowOutsideClick:false,
+        allowEscapeKey:false
+    }).then(()=>{
 
         alarmAudio.pause();
         alarmAudio.currentTime = 0;
@@ -55,7 +56,6 @@ function showNotification(pesan){
     });
 
 }
-
 
 const namaUser = {
 
@@ -380,7 +380,8 @@ if(data.status === "LOW" && !alarmShown.LOW){
     alarmShown.LOW = true;
 
     showNotification(
-        "⚠ Infus Rendah"
+        "⚠ Infus Rendah",
+        "assets/low.mp3"
     );
 
     showBrowserNotification(
@@ -396,7 +397,8 @@ if(data.status === "LOW!!" && !alarmShown.LOW2){
     alarmShown.LOW2 = true;
 
     showNotification(
-        "⚠ Infus Hampir Habis"
+        "⚠ Infus Hampir Habis",
+        "assets/low2.mp3"
     );
     showBrowserNotification(
         "DripGuard Alert",
@@ -410,7 +412,8 @@ if(data.status === "EMPTY" && !alarmShown.EMPTY){
     alarmShown.EMPTY = true;
 
     showNotification(
-        "⚠ Infus Habis"
+        "⚠ Infus Habis",
+        "assets/empty.mp3"
     );
 
     showBrowserNotification(
@@ -426,7 +429,8 @@ if(data.status === "BLOCK" && !alarmShown.BLOCK){
     alarmShown.BLOCK = true;
 
     showNotification(
-        "⚠ Infus Macet"
+        "⚠ Infus Macet",
+        "assets/macet.mp3"
     );
 
     showBrowserNotification(
