@@ -440,12 +440,18 @@ if(data.status === "BLOCK" && !alarmShown.BLOCK){
 
 }
 
-if(data.status === "NORMAL"){
+if(
+    data.status !== "LOW" &&
+    data.status !== "LOW!!" &&
+    data.status !== "EMPTY" &&
+    data.status !== "BLOCK"
+){
 
     alarmShown.LOW = false;
     alarmShown.LOW2 = false;
     alarmShown.EMPTY = false;
     alarmShown.BLOCK = false;
+
 }
     
     // Grafik
