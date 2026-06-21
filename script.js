@@ -144,7 +144,11 @@ let currentRef = null;
 let pasienAktif = "pasien_01";
 let lastData = null;
 let statusPasien = {};
-let lastAlarmStatus = "";
+let alarmShown = {
+    LOW: false,
+    EMPTY: false,
+    BLOCK: false
+};
 
 
 // ============================
@@ -370,16 +374,20 @@ else if(data.status === "SETUP"){
 
 if(data.status !== lastAlarmStatus){
 
-    if(data.status === "LOW"){
+if(data.status === "LOW" && !alarmShown.LOW){
 
-        showNotification(
-            "⚠ Infus Hampir Habis"
-        );
+    alarmShown.LOW = true;
 
-        showBrowserNotification(
+    showNotification(
+        "⚠ Infus Hampir Habis"
+    );
+
+    showBrowserNotification(
         "DripGuard Alert",
         "Infus pasien hampir habis"
     );
+
+}
 
     }
     
@@ -391,10 +399,12 @@ if(data.status !== lastAlarmStatus){
 
     }
 
-else if(data.status === "EMPTY"){
+if(data.status === "EMPTY" && !alarmShown.EMPTY){
+
+    alarmShown.EMPTY = true;
 
     showNotification(
-        "⚠ Infus Habis"
+        "🚨 Infus Habis"
     );
 
     showBrowserNotification(
@@ -404,16 +414,26 @@ else if(data.status === "EMPTY"){
 
 }
 
-else if(data.status === "BLOCK"){
+if(data.status === "BLOCK" && !alarmShown.BLOCK){
+
+    alarmShown.BLOCK = true;
 
     showNotification(
-        "⚠ Infus Macet"
+        "🚨 Infus Macet"
     );
 
     showBrowserNotification(
         "DripGuard Alert",
         "Aliran infus terhambat"
     );
+
+}
+
+if(data.status === "NORMAL"){
+
+    alarmShown.LOW = false;
+    alarmShown.EMPTY = false;
+    alarmShown.BLOCK = false;
 
 }
 
