@@ -64,6 +64,9 @@ const namaUser = {
 
     "ihsanmuhammad" :
         "Dr. Ihsan Muhammad S.T",
+    
+    "iqbalalhafidz" :
+        "Prof. Dr. Iqbal Al-Hafidz S.T., M.T., S.PD. S.H",
 
     "muhidin" :
         "Muhidin, S.T., M,T",
@@ -454,7 +457,7 @@ if(
 
 }
     
-    // Grafik
+    // Grafik       
 
     tpmData.push(data.tpm);
     setpointData.push(data.setpoint);

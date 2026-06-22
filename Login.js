@@ -10,6 +10,7 @@ function login(){
 
         "fakhrimuhammad"  : "081311538140",
         "ihsanmuhammad"  : "ihsan1104",
+        "iqbalalhafidz"  : "310704",
         "muhidin" : "410100599",
         "sarahchairulannisa"   : "410100723",
         "afhamramadhan"   : "410100731",
@@ -66,7 +67,7 @@ if(redirectUrl){
     window.location.href =
         "Dashboard.html";
 
-}
+}   
 
     }
 
