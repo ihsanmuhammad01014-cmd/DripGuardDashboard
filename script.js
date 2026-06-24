@@ -743,7 +743,6 @@ window.logout = function(){
 
 }
 
-/*
 window.onload = function(){
 
     setTimeout(() => {
@@ -756,8 +755,6 @@ window.onload = function(){
     }, 2000);
 
 };
-
-*/
 
 let audioUnlocked = false;
 
