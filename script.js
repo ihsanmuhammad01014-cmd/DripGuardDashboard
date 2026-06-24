@@ -64,6 +64,9 @@ const namaUser = {
 
     "ihsanmuhammad" :
         "Dr. Ihsan Muhammad S.T",
+
+    "salwa" :
+        "Dr. Salwa Elvira Aulia",
     
     "iqbalalhafidz" :
         "Prof. Dr. Iqbal Al-Hafidz S.T., M.T., S.PD. S.H",
@@ -356,14 +359,7 @@ else if(
 else if(data.status === "SETUP"){
     statusEl.classList.add("status-setup");
 }
-/*
-else if(data.status === "INFUS HABIS" ||
-    data.status === "EMPTY"
-){
 
-    statusEl.classList.add("status-empty");
-}
-*/
 else if(data.status === "BLOCK"){
     statusEl.classList.add("status-block");
 }
@@ -736,6 +732,8 @@ if(pasienQR){
 
 }
 
+//===========TES NOTIFIKASI JANGAN LUPA MATIIN=========//
+
 window.logout = function(){
 
     sessionStorage.removeItem("login");
@@ -745,6 +743,7 @@ window.logout = function(){
 
 }
 
+/*
 window.onload = function(){
 
     setTimeout(() => {
@@ -757,6 +756,8 @@ window.onload = function(){
     }, 2000);
 
 };
+
+*/
 
 let audioUnlocked = false;
 
