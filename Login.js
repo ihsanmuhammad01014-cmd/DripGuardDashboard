@@ -10,6 +10,7 @@ function login(){
 
         "fakhrimuhammad"  : "081311538140",
         "ihsanmuhammad"  : "ihsan1104",
+        "salwa"  : "salwa24",
         "iqbalalhafidz"  : "310704",
         "muhidin" : "410100599",
         "sarahchairulannisa"   : "410100723",
